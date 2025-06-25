@@ -1,17 +1,11 @@
 package org.example.vehicleservice.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.springframework.stereotype.Component;
+import lombok.*;
 
-
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-@Component
 public class ResponseDTO {
-    private int code;
+    private String status;
     private String message;
-    private Object data;
 }

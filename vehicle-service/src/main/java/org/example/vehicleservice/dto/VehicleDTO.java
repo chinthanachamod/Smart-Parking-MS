@@ -1,17 +1,18 @@
 package org.example.vehicleservice.dto;
 
-import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.UUID;
-
-@AllArgsConstructor
-@NoArgsConstructor
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class VehicleDTO {
-    private UUID id;
-    private String licensePlate;
-    private String model;
-    private String email;
-}
 
+    private Long id;
+    private String type;
+    private String plateNumber;
+    private String brand;
+    private String color;
+    private String entryTime;
+    private String exitTime;
+    private Long userId;
+}

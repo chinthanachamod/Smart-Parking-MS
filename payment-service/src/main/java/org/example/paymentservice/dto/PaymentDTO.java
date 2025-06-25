@@ -1,24 +1,18 @@
 package org.example.paymentservice.dto;
 
-import jakarta.persistence.Column;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-import java.sql.Date;
-import java.sql.Time;
-import java.util.UUID;
-
-@AllArgsConstructor
-@NoArgsConstructor
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class PaymentDTO {
-    private UUID paymentId;
-    private String licensePlate;
-    private String userEmail;
-    private String parkingLocation;
-    private int amount;
-    private Date paymentDate;
-    private Date bookingDate;
-    private Time paymentTime;
+    private Long id;
+    private Long userId;
+    private Long bookingId;
+    private double amount;
+    private String cardNumber;
+    private String transactionStatus;
+    private String transactionTime;
+    private String receiptUrl;
 }

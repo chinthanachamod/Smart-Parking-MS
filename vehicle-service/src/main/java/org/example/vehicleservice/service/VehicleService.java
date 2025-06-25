@@ -5,13 +5,11 @@ import org.example.vehicleservice.dto.VehicleDTO;
 import java.util.List;
 
 public interface VehicleService {
-    int saveVehicle(VehicleDTO vehicle);
+    void saveVehicle(VehicleDTO vehicleDTO);
 
-    int updateVehicle(VehicleDTO vehicleDTO);
+    void updateVehicle(Long id);
 
-    int deleteVehicle(VehicleDTO vehicleDTO);
+    List<VehicleDTO> getAllVehicles();
 
-    List<VehicleDTO> getAllVehicle();
-
-    VehicleDTO getVehicleByNumberPlate(String licenPlate);
+    void deleteVehicle(Long id);
 }

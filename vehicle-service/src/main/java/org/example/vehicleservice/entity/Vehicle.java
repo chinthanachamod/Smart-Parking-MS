@@ -1,23 +1,29 @@
 package org.example.vehicleservice.entity;
 
-
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.UUID;
-
-@AllArgsConstructor
-@NoArgsConstructor
-@Data
 @Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Vehicle {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
-    @Column(unique = true, nullable = false)
-    private String licensePlate;
-    @Column(nullable = false)
-    private String model;
-    @Column(nullable = false)
-    private String email;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String type;
+
+    private String plateNumber;
+
+    private String brand;
+
+    private String color;
+
+    private String entryTime;
+
+    private String exitTime;
+
+    private Long userId;
 }
