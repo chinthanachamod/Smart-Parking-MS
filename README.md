@@ -2,4 +2,4 @@
 
 ## 📦 Resources
 
-- ![Eureka Dashboard](./docs/Screenshots/eureka_dashboard.png)
+- ![Eureka Dashboard] (./docs/Screenshots/eureka_dashboard.png)
