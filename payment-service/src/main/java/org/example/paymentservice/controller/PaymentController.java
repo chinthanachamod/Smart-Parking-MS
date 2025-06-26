@@ -16,12 +16,14 @@ public class PaymentController {
     @Autowired
     private PaymentService paymentService;
 
+    // "localhost:8085/api/payments/process" for processing payment
     @PostMapping("/process")
     public ResponseEntity<PaymentDTO> processPayment(@RequestBody PaymentDTO paymentDTO) {
         paymentService.processPayment(paymentDTO);
         return ResponseEntity.ok(paymentDTO);
     }
 
+    // "localhost:8085/api/payments/allPayments" for getting all payments
     @GetMapping("/allPayments")
     public ResponseEntity<List<PaymentDTO>> getAllPayments() {
         try {
@@ -31,6 +33,7 @@ public class PaymentController {
         }
     }
 
+    // "localhost:8085/api/payments/payment/{id}" for getting payment by id
     @GetMapping("/payment/{id}")
     public ResponseEntity<PaymentDTO> getPaymentById(@PathVariable Long id) {
         try {

@@ -17,6 +17,8 @@ public class ParkingController {
     @Autowired
     private ParkingService parkingService;
 
+
+    // "localhost:8087/api/parking/save" for save parking space
     @PostMapping("/save")
     public ResponseEntity<ResponseDTO> addParking(@RequestBody ParkingSpaceDTO parkingSpaceDTO) {
         try {
@@ -28,6 +30,8 @@ public class ParkingController {
         }
     }
 
+
+    // "localhost:8087/api/parking/allSpaces" for getting all available parkings
     @GetMapping("/allSpaces")
     public ResponseEntity<List<ParkingSpaceDTO>> getAllSpaces() {
         try {
@@ -38,6 +42,8 @@ public class ParkingController {
         }
     }
 
+
+    // "localhost:8087/api/parking/update/{id}" for update parking space by id
     @PutMapping("/update/{id}")
     public ResponseEntity<ResponseDTO> updateParking(@PathVariable Long id, @RequestBody ParkingSpaceDTO parkingSpaceDTO) {
         try {
@@ -49,6 +55,8 @@ public class ParkingController {
         }
     }
 
+
+    // "localhost:8087/api/parking/delete/{id}" for delete parking space by id
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<ResponseDTO> deleteParking(@PathVariable Long id) {
         try {

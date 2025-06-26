@@ -1,0 +1,381 @@
+{
+	"info": {
+		"_postman_id": "046de08b-5aaf-4fc8-aece-10827a90ade8",
+		"name": "Smart Parking MS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40383070"
+	},
+	"item": [
+		{
+			"name": "User-Service",
+			"item": [
+				{
+					"name": "Save User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/users/save",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"chinthana@gmail.com\",\r\n  \"password\": \"chinthana1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8089/api/users/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8089/api/users/allUsers",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"api",
+								"users",
+								"allUsers"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Parking-Service",
+			"item": [
+				{
+					"name": "Save Parking-Space",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 2,\r\n  \"location\": \"Kandy - Zone C\",\r\n  \"isAvailable\": false,\r\n  \"slotNumber\": \"C08\",\r\n  \"type\": \"Large\"\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8087/api/parking/save",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"api",
+								"parking",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Getting All Available Parkings",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8087/api/parking/allSpaces",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"api",
+								"parking",
+								"allSpaces"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Parking Space by ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"location\": \"Colombo - Zone B\",\r\n  \"isAvailable\": false,\r\n  \"slotNumber\": \"B07\",\r\n  \"type\": \"Large\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8087/api/parking/update/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"api",
+								"parking",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Parking Space by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8087/api/parking/delete/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"api",
+								"parking",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vehicle-Service",
+			"item": [
+				{
+					"name": "Save Vehicle",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"type\": \"Car\",\r\n  \"plateNumber\": \"ABC-1234\",\r\n  \"brand\": \"Toyota\",\r\n  \"color\": \"White\",\r\n  \"entryTime\": \"2025-06-26T08:30:00\",\r\n  \"exitTime\": \"2025-06-26T11:00:00\",\r\n  \"userId\": 10\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8088/api/vehicle/save",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"api",
+								"vehicle",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Vehicles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8088/api/vehicle/allVehicles",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"api",
+								"vehicle",
+								"allVehicles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Updating Vehicle by ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"type\": \"Car\",\r\n  \"plateNumber\": \"ABC-1234\",\r\n  \"brand\": \"Nissan\",\r\n  \"color\": \"Red\",\r\n  \"entryTime\": \"2025-06-26T08:30:00\",\r\n  \"exitTime\": \"2025-06-26T10:45:00\",\r\n  \"userId\": 10\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8088/api/vehicle/update/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"api",
+								"vehicle",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deleting Vehicle by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8088/api/vehicle/delete/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"api",
+								"vehicle",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payment-Service",
+			"item": [
+				{
+					"name": "Payment Processing",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 2,\r\n  \"userId\": 12,\r\n  \"bookingId\": 202,\r\n  \"amount\": 1200.50,\r\n  \"cardNumber\": \"5500000000000004\",\r\n  \"transactionStatus\": \"PENDING\",\r\n  \"transactionTime\": \"2025-06-26T15:45:00\",\r\n  \"receiptUrl\": \"https://example.com/receipts/2\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8085/api/payments/process",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"payments",
+								"process"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Getting All Payments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8085/api/payments/allPayments",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"payments",
+								"allPayments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Getting Payment by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8085/api/payments/payment/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"payments",
+								"payment",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
