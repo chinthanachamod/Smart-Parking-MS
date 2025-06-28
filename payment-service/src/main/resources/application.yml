@@ -9,7 +9,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/spms_payments?createDatabaseIfNotExist=true
     username: root
-    password: Ijse@123
+    password: #{your-database-password}
   jpa:
     database-platform: org.hibernate.dialect.MySQL8Dialect
     hibernate:
