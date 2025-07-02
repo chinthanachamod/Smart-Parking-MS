@@ -17,7 +17,6 @@ public class VehicleController {
     @Autowired
     private VehicleService vehicleService;
 
-    // "localhost:8088/api/vehicle/save" for saving vehicle
     @PostMapping("/save")
     public ResponseEntity<ResponseDTO> saveVehicle(@RequestBody VehicleDTO vehicleDTO) {
         try {
@@ -29,7 +28,6 @@ public class VehicleController {
         }
     }
 
-    // "localhost:8088/api/vehicle/update/{id}" for updating vehicle by id
     @PutMapping("/update/{id}")
     public ResponseEntity<ResponseDTO> updateVehicle(@PathVariable Long id) {
         try {
@@ -40,7 +38,6 @@ public class VehicleController {
         }
     }
 
-    // "localhost:8088/api/vehicle/allVehicles" for getting all vehicles
     @GetMapping("/allVehicles")
     public ResponseEntity<List<VehicleDTO>> getAllVehicles() {
         try {
@@ -51,7 +48,6 @@ public class VehicleController {
         }
     }
 
-    // "localhost:8088/api/vehicle/delete/{id}" for deleting vehicle by id
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<ResponseDTO> deleteVehicle(@PathVariable Long id) {
         try {

@@ -8,13 +8,13 @@ spring:
     config:
       server:
         git:
-          uri: #{your-git-repository-url}
+          uri: https://github.com/chinthanachamod/Smart-Parking-MS.git  #{your-git-repository-url}
           clone-on-start: true
           # your git repository URL
           default-label: main
-          username: #{your-git-username}
+          username: chinthanachamod  #{your-git-username}
           # your git username
-          password: #{your-git-password}
+          password: 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  #{your-git-password}
 
 
 eureka:
